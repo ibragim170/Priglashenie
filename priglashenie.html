@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приглашение на День Рождения</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .invitation {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #ff69b4;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px 0;
+    }
+
+    .details {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    form input, form textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: #e0559e;
+    }
+
+    @media (max-width: 600px) {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает воспроизведение аудио.
+  </audio>
+
+  <div class="container">
+    <div class="invitation">
+      <h1>Ты приглашен!</h1>
+      <img src="https://via.placeholder.com/200" alt="Фото именинника">
+      <p class="details">
+        Дата: <strong>20 мая 2025</strong><br>
+        Время: <strong>17:00</strong><br>
+        Место: <strong>ул. Веселая, д. 12, кв. 5</strong>
+      </p>
+      <p>Приходи, будет весело! Игры, музыка и вкусный торт!</p>
+      <p>С любовью, <strong>Аня</strong></p>
+
+      <hr>
+
+      <h2>Подтвердить участие:</h2>
+      <form onsubmit="submitRSVP(event)">
+        <input type="text" placeholder="Твое имя" required><br>
+        <input type="email" placeholder="Email (необязательно)"><br>
+        <textarea placeholder="Напиши пожелание или вопрос (необязательно)"></textarea><br>
+        <button type="submit" class="button">Отправить</button>
+      </form>
+
+      <p id="thanks" style="display:none; margin-top: 15px; color: green;">Спасибо! Жду тебя!</p>
+    </div>
+  </div>
+
+  <script>
+    function submitRSVP(event) {
+      event.preventDefault();
+      document.querySelector('form').style.display = 'none';
+      document.getElementById('thanks').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
